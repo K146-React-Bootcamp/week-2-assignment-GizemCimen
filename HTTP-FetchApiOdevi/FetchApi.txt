@@ -1,0 +1,137 @@
+
+## Sıralama ödevi algoritması
+##### todos.js dosyası içerisinde düzenlenecek.
+table thead kısmındaki sıralama yapılacak kolonlara event listener eklenecek.
+event listener hangi kolon için tıklanıyorsa sort metodu kullanılarak sıralama yapılacak.
+sıralanmış todos'todus içerisine atılacak.
+renderTodos metodu çalıştırılacak.
+
+## HTTP - Fetch Api Ödevi
+
+##### README.md dosyası, txt, js dosyası açarak yapılabilir.
+
+* HTTP Status'ün 
+  * Görevleri nelerdir? Bu görevlerin anlamlarını açıklayınız.
+
+
+HTTP durum kodları (status codes) browser ile sunucu arasındaki iletişim sürecinde neler olduğunu açıklayan, 3 haneli bir sayıdır. Bu kodlar hata ile ilgili olabildiği gibi başarılı işlemlerin de HTTP durum kodu vardır.
+1xx Kodu : Bilgi İsteği
+2xx Kodu : Başarı
+3xx Kodu : Yönlendirme
+4xx Kodu : İstemci hatası. Genellikle sitede bir sayfa bulunmadığında görünür.
+5xx Kodu : Sunucu Hatası
+
+1xx Sınıfı (Bilgilendirme Yanıtları): 
+1xx kodları kullanıcının ziyaret ettiği internet sitesindeki ulaştırma bilgilerinden sorumludur.
+
+    100 Continue: Devam
+    101 Switching Protocols: Protokol değiştirme
+    102 Processing: İşlem
+    122 Request-URI too long: İstekte bulunduğunuz adres çok uzun
+
+2xx Sınıfı (Başarı Yanıtları): 
+2xx kodları başarılı işlemleri bildirmeye yöneliktir. 
+
+    200 OK: Başarılı/Tamam
+    201 Created: Oluşturuldu
+    202 Accepted: Kabul edildi/Onaylandı
+    203 Non-Authoritative Information: Yetersiz bilgi
+    204 No Content: İçerik yok
+    205 Reset Content: İçeriği Baştan al
+    210 Content Different: Farklı içerik
+
+3xx Sınıfı (Yönlendirme Yanıtları):
+3xx kodu isteğin sunucuya ulaştığını göstermektedir.
+
+    300 Multiple Choices: Çoklu seçenek
+    301 Moved Permanently: Kalıcı yönlendirme
+    302 Found: Geçici yönlendirme
+    303 See Other: Diğerlerine bak
+    304 Not Modified: Güncellenmemiş/Değiştirilmemiş
+    305 Use Proxy: Proxy kullan
+    306 Switch Proxy: Proxy’e geçildi
+    307 Temporary Redirect: Geçici olarak yeniden yönlendirme
+
+4xx Sınıfı (İstemci Hatası Yanıtları):
+Tarayıcı tarafından gönderilen isteğe konu olan web sitesine ya da sayfaya ulaşılamadığında gösterilen ve isteğin yerine getirilemediğini ifade eden HTTP durum kodlarıdır.
+
+    400 Bad Request: Kötü/Hatalı istek
+    401 Unauthorized: Yetkisi
+    402 Payment Required: Ödeme gerekli
+    403 Forbidden: Yasaklandı/Erişim izni sorunu
+    404 Not Found: Bulunamadı
+    405 Method Not Allowed: İzin verilmeyen yöntem
+    406 Not Acceptable: Kabul edilemez
+    407 Proxy Authentication Required: Proxy üzerinden yetkilendirme gerekli
+    408 Request Timeout: Zaman aşımı
+    409 Conflict: Çakışma
+
+5xx Sınıfı (Sunucu Hatası Yanıtları:)
+Kullanıcı isteğinin sunucuya başarılı bir şekilde ulaşması fakat sunucu kaynaklı sorunlar nedeniyle isteğin yerine getirilememesi hâlinde gösterilen kodların sınıfıdır.
+
+    500 Internal Server Error: Sunucu hatası
+    501 Not Implemented: İstek uygulanmadı
+    502 Bad Gateway: Kötü ağ geçidi
+    503 Service Unavailable: Sunucu kullanılamıyor
+    504 Gateway Timeout: Ağ geçidi zaman aşımı
+    505 HTTP Version Not Supported:  HTTP sürümü desteklenmiyor
+
+En Sık Karşılaşılan Durum Kodları:
+
+200 Durum Kodu (Başarılı)
+301 Durum Kodu (Kalıcı Yönlendirme)
+302 Durum Kodu (Geçici Yönlendirme)
+403 Durum Kodu (Erişim İzni Sorunu)
+404 Durum Kodu (Bulunamadı)
+410 Durum Kodu (Kalıcı Olarak Bulunmuyor)
+500 Durum Kodu (Sunucu Hatası)
+503 Durum Kodu (Sunucu Kullanılamıyor)
+
+
+* HTTP Request'in metodlari  nelerdir? 
+
+İki kısımdan oluşur, Request(istek) ve bunun Response (Cevap)'tan oluşur.
+
+1-)Get: Get methodu serverden veri alabilmek için kullanılır. GET methodu sayesinde sorgu metinleri URL içinde gönderilebilir.
+
+2-)Post: Post methodu ile sunucuya veri yazdırabilirsiniz. Bu method parametreleri gövde kısmında gönderir. URL içerisinde gözükmez, server loglarında gözükmez ve loglara işlemez.
+
+3-)Put: Put methodu ile servis sağlayıcı üzerindeki bir kaynağı güncelleyebilirsiniz. Hangi kaynağı güncelleyecekseniz o kaynağın id’sini göndermek zorunludur.
+
+4-)Head: GET methodu ile benzer bir yapıdadır ancak bir yanıt gövdesi bulunmaz. Bu nedenle GET mesajı gönderilmeden önce bir kaynağın var olup olmadığını kontrol etmek için kullanılabilir.
+
+5-)Connect: Connect methodu iletişime geçtigimiz kaynaklar ile (Web sitesi,Server Vb) iki yönlü iletişimi saglar. Bir proxy sunucu üzerinden başka bir sunucuya bağlanmak ve proxy sunucuyu bir tünel gibi kullanmak için kullanılır.
+
+6-)Delete: Bu metod ile sunucudaki herhangi bir veriyi silebilirsiniz.
+
+7-)Options: Sunucu üzerindeki HTTP methodlarını sorgulamak için kullanılır
+
+8-)Patch: Bu metod bir kaynağa istediğiniz küçük çaplı değişimi yapmanızı sağlar.
+
+9-)Trace: Request And Response ( İstek Ve Cevap ) Bir hata düzeltme methodu olarak işlev gösterir. Ana kaynaktan gelen istekler boyunca yapılan degişikliklerin anlamanıza yardımcı olur
+
+
+*  Fetch API'nin metodlari ile örnekleri
+
+Fetch API window objesinde bulunan web istekleri yapabileceğimiz ve cevaplarını kolaylıkla işleyebileceğimiz asenkron çalışan bir metoddur.
+
+5 method vardır: Get, Post, Put, Patch, Delete
+fetch() :bu yöntem bir kaynak almak için kullanılır.
+Headers :response/request başlıklarını temsil ederek bunları sorgulamanıza ve sonuçlara bağlı olarak farklı eylemler gerçekleştirmenize olanak tanır.
+
+Request :bir kaynak talebini temsil eder.
+Response :bir isteğe verilen yanıtı temsil eder.
+
+fetch(url); --> sonra then() promise metodunu ekleriz:
+.then(function() {
+})
+
+// GET İsteği
+fetch("https://jsonplaceholder.typicode.com/todos")
+	.then((response) => response.json()) 
+	.then(function (todos) {
+		todos.forEach((todo) => {
+			console.log(todo.title); 
+		});
+	});
+
