@@ -1,3 +1,5 @@
+<a href="https://coruscating-squirrel-8e8316.netlify.app">Netlify Deploy Link</a>
+
 ## Sıralama ödevi algoritması
 ##### todos.js dosyası içerisinde düzenlenecek.
 table thead kısmındaki sıralama yapılacak kolonlara event listener eklenecek.
